@@ -2,11 +2,9 @@ package com.marcinmoskala.arcseekbar
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.graphics.Canvas
-import android.graphics.LinearGradient
-import android.graphics.Paint
-import android.graphics.Shader
+import android.graphics.*
 import android.graphics.drawable.Drawable
+import android.support.v4.content.ContextCompat
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
@@ -32,7 +30,7 @@ class ArcSeekBar @JvmOverloads constructor(
             invalidate()
         }
 
-    var progress: Int = a.useOrDefault(0) { getInteger(R.styleable.ArcSeekBar_progress, it) }
+    var progress: Int = a.useOrDefault(0) { getInteger(R.styleable.ArcSeekBar_progressValue, it) }
         set(progress) {
             field = bound(0, progress, maxProgress)
             onProgressChangedListener?.invoke(progress)
@@ -66,7 +64,7 @@ class ArcSeekBar @JvmOverloads constructor(
             invalidate()
         }
 
-    private val thumb: Drawable = a?.getDrawable(R.styleable.ArcSeekBar_thumb) ?: resources.getDrawable(R.drawable.thumb)
+    private val thumb: Drawable = (a?.getDrawable(R.styleable.ArcSeekBar_thumb) ?: ContextCompat.getDrawable(context, R.drawable.thumb)) as Drawable
 
     private var roundedEdges = a.useOrDefault(true) { getBoolean(R.styleable.ArcSeekBar_roundEdges, it) }
         set(value) {
@@ -81,12 +79,12 @@ class ArcSeekBar @JvmOverloads constructor(
         }
 
     private var progressBackgroundPaint: Paint = makeProgressPaint(
-            color = a.useOrDefault(resources.getColor(android.R.color.darker_gray)) { getColor(R.styleable.ArcSeekBar_progressBackgroundColor, it) },
+            color = a.useOrDefault(ContextCompat.getColor(context,android.R.color.darker_gray)) { getColor(R.styleable.ArcSeekBar_progressBackgroundColor, it) },
             width = progressBackgroundWidth
     )
 
     private var progressPaint: Paint = makeProgressPaint(
-            color = a.useOrDefault(resources.getColor(android.R.color.holo_blue_light)) { getColor(R.styleable.ArcSeekBar_progressColor, it) },
+            color = a.useOrDefault( Color.BLUE) { getColor(R.styleable.ArcSeekBar_progressColor, it) },
             width = progressWidth
     )
 
