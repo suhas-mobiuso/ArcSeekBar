@@ -125,8 +125,8 @@ class ArcSeekBar @JvmOverloads constructor(
 
     @SuppressLint("DrawAllocation")
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
-        val height = View.getDefaultSize(suggestedMinimumHeight, heightMeasureSpec)
-        val width = View.getDefaultSize(suggestedMinimumWidth, widthMeasureSpec)
+        val height = getDefaultSize(suggestedMinimumHeight, heightMeasureSpec)
+        val width = getDefaultSize(suggestedMinimumWidth, widthMeasureSpec)
         val dx = maxOf(thumb.intrinsicWidth.toFloat() / 2, this.progressWidth) + 2
         val dy = maxOf(thumb.intrinsicHeight.toFloat() / 2, this.progressWidth) + 2
         val realWidth = width.toFloat() - 2 * dx - paddingLeft - paddingRight
