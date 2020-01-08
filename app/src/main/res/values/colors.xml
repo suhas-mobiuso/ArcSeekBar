@@ -4,10 +4,20 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="sliderBack">#4227395a</color>
+<!--    <array name="progressGradientColors">-->
+<!--        <item>#b5fff6</item>-->
+<!--        <item>#00ffdf</item>-->
+<!--        <item>#00bfa4</item>-->
+<!--        <item>#007c6a</item>-->
+<!--    </array>-->
+
+    <color name="gdStart">#09A3DE</color>
+    <color name="gdEnd">#22BBA7</color>
+
+
     <array name="progressGradientColors">
-        <item>#b5fff6</item>
-        <item>#00ffdf</item>
-        <item>#00bfa4</item>
-        <item>#007c6a</item>
+        <item>@color/gdStart</item>
+        <item>@color/gdEnd</item>
     </array>
+
 </resources>

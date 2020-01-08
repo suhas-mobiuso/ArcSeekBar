@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ArcSeekBar arcSeekBar = findViewById(R.id.seekArc);
 
-        arcSeekBar.setMaxProgress(200);
+        arcSeekBar.setMaxProgress(1090);
         ProgressListener progressListener = progress -> Log.i("SeekBar", "Value is " + progress);
         progressListener.invoke(0);
         arcSeekBar.setOnProgressChangedListener(progressListener);

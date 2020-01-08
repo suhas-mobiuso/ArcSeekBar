@@ -46,7 +46,7 @@ Here are some usage examples:
     android:layout_height="100dp"
     app:progressBackgroundColor="@color/sliderBack"
     app:progressBackgroundWidth="20dp"
-    app:progress="100"
+    app:progressValue="100"
     app:progressWidth="20dp"
     app:roundEdges="true" />
 ```
@@ -64,7 +64,7 @@ arcSeekBar.setProgressGradient(intArray);
 
 ArcSeekBar properties are:
 * `thumb` - reference to thumb drawable.
-* `progress` - initial value of progress (0 by default).
+* `progressValue` - initial value of progress (0 by default).
 * `maxProgress` max vale of progress (100 by default).
 * `progressColor` color of visible progress bar.
 * `progressWidth` width of visible progress bar.

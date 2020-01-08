@@ -3,7 +3,6 @@ apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'kotlin-android'
 
 group = 'com.github.marcinmoskala'
-version = '0.01'
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
